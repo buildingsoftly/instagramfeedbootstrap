@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram with Bootstrap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row d-flex flex-row">
+            <div class="col-4 d-flex align-items-center">
+                <i class="fa-brands fa-instagram fa-3x left-icons"></i>
+                <h4 class="mx-2 my-auto" style="font-family: arial, serif;">Instagram</h4>
+            </div>
+            <div class="col-4 bg-light"></div>
+            <div class="col-4 d-flex justify-content-end align-items-center" id="modal-1">
+                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#createPostModal">Create a New Post</button>
+                <div class="btn-group ms-2">
+                    <button type="button" class="btn btn-secondary btn-sm dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        Action
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li><a class="dropdown-item" href="#">Accessibility</a></li>
+                        <li><a class="dropdown-item" href="#">Privacy & Data</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item text-danger" href="#">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="createPostModal" tabindex="-1" aria-labelledby="createPostModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="createPostModalLabel">Create a New Post</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="caption" class="col-form-label">Caption</label>
+                                <textarea class="form-control" id="caption"></textarea>
+                            </div>
+                            <div class="form-group mt-3">
+                                <button type="button" class="btn btn-outline-primary">Add Photo</button>
+                                <button type="button" class="btn btn-outline-secondary">Add Location</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Publish</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center mt-5">
+            <div class="col-12 text-center mb-4">
+                <button class="btn btn-secondary btn-sm mx-2" id="grid-view">Grid View</button>
+                <button class="btn btn-secondary btn-sm mx-2" id="list-view">List View</button>
+            </div>
+        </div>
+
+        <div id="photo-feed" class="row row-cols-1 row-cols-md-3 justify-content-center">
+            <div class="col mb-4 post-card">
+                <div class="card border-0">
+                    <img class="card-img-top img-fluid rounded mx-auto d-block" src="https://imgs.search.brave.com/1aNML6lef0YQRr3nhqr_K8RNy48L949O6wu-RPk5JUQ/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvNTAw/Nzk4NzA1L3Bob3Rv/L3BvcnRyYWl0LW9m/LWEtcHVnLWRvZy13/ZWFyaW5nLWJvdy10/aWUuanBnP3M9NjEy/eDYxMiZ3PTAmaz0y/MCZjPWlQX0lHblVR/aDRaTnA0OWRzY2d5/VWpURS16amFYVWti/X3BHeENZNWp3bHc9" alt="Post Image">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <h5 class="card-title" id="post-heading">My friends dog.</h5>
+                            <p id="post-date" class="text-muted">12/31</p>
+                        </div>
+                        <p id="likes" class="text-muted"><strong>301 Likes</strong></p>
+                        <p id="caption">My friend's dog is modeling good behavior.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-4 post-card">
+                <div class="card border-0">
+                    <img class="card-img-top img-fluid rounded mx-auto d-block" src="https://imgs.search.brave.com/7stC5Y677HkQbyGSuvbulYkNWTlcwGutnpYxEMokmxI/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTgy/NDY1MDk3L3Bob3Rv/L2h0bWwtY29kZS5q/cGc_cz02MTJ4NjEy/Jnc9MCZrPTIwJmM9/cUlIWldfc3JaTkZI/RzVjamVrbGkwLU9T/UzRZbjlWSWNtcFl5/V19jS3B3MD0" alt="Post Image">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <h5 class="card-title" id="post-heading">Sum code for you.</h5>
+                            <p id="post-date" class="text-muted">12/25</p>
+                        </div>
+                        <p id="likes" class="text-muted"><strong>901 Likes</strong></p>
+                        <p id="caption">Writing code is fun.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-4 post-card">
+                <div class="card border-0">
+                    <img class="card-img-top img-fluid rounded mx-auto d-block" src="https://imgs.search.brave.com/zfUjxnvwbDZnPdHz3UyoGOWZ9zH7qGsTqfT91MmRvk0/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/ZnJlZS1waG90by9j/b21wdXRlci1wcm9n/cmFtLWNvZGluZy1z/Y3JlZW5fNTM4NzYt/MTM4MDYwLmpwZz9z/ZW10PWFpc19oeWJy/aWQ" alt="Post Image">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <h5 class="card-title" id="post-heading">Sum more code for you.</h5>
+                            <p id="post-date" class="text-muted">12/21</p>
+                        </div>
+                        <p id="likes" class="text-muted"><strong>801 Likes</strong></p>
+                        <p id="caption">Writing code is super fun.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-4 post-card">
+                <div class="card border-0">
+                    <img class="card-img-top img-fluid rounded mx-auto d-block" src="https://imgs.search.brave.com/gdVbk8IuNt8tf4B3jAGoTmfczSdnqh-9JSO8tmhsi3s/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTQ4/NzMwNTkxMC9waG90/by9jb2RlLWh0bWwt/Y2dpLXN0b2NrLXBo/b3RvLmpwZz9zPTYx/Mng2MTImdz0wJms9/MjAmYz0zY2FCTmlC/VEJTbG5JSzlnVmFw/WTlVMk5rNHlXSTdY/Q2lGek5YVmRVVjJN/PQ" alt="Post Image">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <h5 class="card-title" id="post-heading">Eat this code up.</h5>
+                            <p id="post-date" class="text-muted">12/19</p>
+                        </div>
+                        <p id="likes" class="text-muted"><strong>1001 Likes</strong></p>
+                        <p id="caption">Writing code is crazy fun.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-4 post-card">
+                <div class="card border-0">
+                    <img class="card-img-top img-fluid rounded mx-auto d-block" src="https://imgs.search.brave.com/NqIt2DeCcI85pxOdCKb9QllUYuLx209M0pAasUZih9g/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTI3/MDIxODIxMC9waG90/by9jbG9zZS11cC1j/b21wdXRlci1jb2Rl/LW9uLXNjcmVlbi5q/cGc_cz02MTJ4NjEy/Jnc9MCZrPTIwJmM9/QUl2bklmWG9Eangt/ZW11OG9rRWtpMTNa/MVpBZ1B1WnFBOFhU/al9hTC1tST0" alt="Post Image">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <h5 class="card-title" id="post-heading">Sum code with your dinner.</h5>
+                            <p id="post-date" class="text-muted">12/12</p>
+                        </div>
+                        <p id="likes" class="text-muted"><strong>401 Likes</strong></p>
+                        <p id="caption">Writing code is superfluous.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-4 post-card">
+                <div class="card border-0">
+                    <img class="card-img-top img-fluid rounded mx-auto d-block" src="https://imgs.search.brave.com/7923lRQIaXv-XjocLTJNRTzrjfCYvZQstA8PLCzTTG8/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzAzLzQzLzI1LzA5/LzM2MF9GXzM0MzI1/MDk2OF9pT2lQRVd4/ZFdYZDJVV011bVNi/b1RTSHp3UjdRNFpw/ZC5qcGc" alt="Post Image">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <h5 class="card-title" id="post-heading">Love me some code.</h5>
+                            <p id="post-date" class="text-muted">12/08</p>
+                        </div>
+                        <p id="likes" class="text-muted"><strong>1201 Likes</strong></p>
+                        <p id="caption">Writing code is a trip.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-4 post-card">
+                <div class="card border-0">
+                    <img class="card-img-top img-fluid rounded mx-auto d-block" src="https://imgs.search.brave.com/4g6WWeuuR9ggLqkjf2BWcx4HJpRWXJXXTe1CwjeZ0DU/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzAxLzgxLzQzLzk0/LzM2MF9GXzE4MTQz/OTQ5M18xUHE2eEtp/YUUzZWlaSnNMUUdL/SGFxeU1BZUdWendU/cS5qcGc" alt="Post Image">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <h5 class="card-title" id="post-heading">Running out of ideas here.</h5>
+                            <p id="post-date" class="text-muted">12/06</p>
+                        </div>
+                        <p id="likes" class="text-muted"><strong>1301 Likes</strong></p>
+                        <p id="caption">Writing code is incredibly dangerous.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-4 post-card">
+                <div class="card border-0">
+                    <img class="card-img-top img-fluid rounded mx-auto d-block" src="https://imgs.search.brave.com/iiARtb3IgN0kDJb0PIKrIJhvuw6IEk4GcYhb3FcUG8I/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/cHJlbWl1bS1waG90/by9hYnN0cmFjdC1t/b2Rlcm4tdGVjaC1w/cm9ncmFtbWluZy1j/b2RlLXNjcmVlbi1k/ZXZlbG9wZXItYy1w/cm9ncmFtbWluZy1s/YW5ndWFnZS1jb21w/dXRlci1zY3JpcHRf/NTA1MzUzLTkxLmpw/Zz9zZW10PWFpc19o/eWJyaWQ" alt="Post Image">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <h5 class="card-title" id="post-heading">I like code because code likes me.</h5>
+                            <p id="post-date" class="text-muted">12/04</p>
+                        </div>
+                        <p id="likes" class="text-muted"><strong>1801 Likes</strong></p>
+                        <p id="caption">Writing code can make or break you.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-4 post-card">
+                <div class="card border-0">
+                    <img class="card-img-top img-fluid rounded mx-auto d-block" src="https://imgs.search.brave.com/YtJMa144V_h9BOPxE7I9m8oriCnBvbATjPA4nVdVuBI/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTM1/MDkwMDE4Ny9waG90/by9pdC10ZWFjaGVy/LXdyaXRpbmctb24t/dGhlLXdoaXRlYm9h/cmQtaW4tdGhlLWNs/YXNzcm9vbS5qcGc_/cz02MTJ4NjEyJnc9/MCZrPTIwJmM9R1F0/SkdHVHZHUVo2WUZi/ckRqWnRLRUVEOHRZ/LVh5LWxHX2lKUzZi/aEJ4RT0" alt="Post Image">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <h5 class="card-title" id="post-heading">Coding in a classroom.</h5>
+                            <p id="post-date" class="text-muted">12/01</p>
+                        </div>
+                        <p id="likes" class="text-muted"><strong>901 Likes</strong></p>
+                        <p id="caption">Coding in class is a next level experience.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+        document.getElementById('grid-view').addEventListener('click', function() {
+            document.getElementById('photo-feed').classList.remove('row-cols-1');
+            document.getElementById('photo-feed').classList.add('row-cols-1', 'row-cols-md-3');
+        });
+
+        document.getElementById('list-view').addEventListener('click', function() {
+            document.getElementById('photo-feed').classList.remove('row-cols-1', 'row-cols-md-3');
+            document.getElementById('photo-feed').classList.add('row-cols-1');
+        });
+    </script>
+</body>
+</html>
